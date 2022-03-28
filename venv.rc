@@ -1,0 +1,14 @@
+# use this file to initialize the virtual env
+# usage: source venv.rc
+
+venv=./.venv
+requirements=./requirements.txt
+
+# create the venv if not yet there
+if [ ! -d "$venv" ]; then
+  virtualenv -p python3 $venv
+fi
+
+# activate and install
+source $venv/bin/activate
+pip install -r $requirements  | grep -v "Requirement already satisfied"
