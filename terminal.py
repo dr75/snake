@@ -56,7 +56,7 @@ def wait_key():
                 ch = ch + ch2
 
                 # set to blocking
-                fcntl.fcntl(fd, fcntl.F_SETFL, fl - os.O_NONBLOCK)
+                fcntl.fcntl(fd, fcntl.F_SETFL, fl)
             if ch != '':
                 break
     finally:
